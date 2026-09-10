@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  search_engine:
+    build: .
+    container_name: mini_search_engine
+    restart: unless-stopped
+    ports:
+      - "8003:8003"
+    environment:
+      - PORT=8003
+    command: ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8003", "--workers", "2"]

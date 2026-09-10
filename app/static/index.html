@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inverted Index & BM25 Search Engine</title>
+    <meta name="description" content="Production-grade full-text search engine with inverted index, Okapi BM25 ranking, and autocomplete.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="badge">Lucene-Grade Architecture</div>
+            <h1 class="main-title">Mini Search Engine</h1>
+            <p class="subtitle">Positional Inverted Index &bull; Okapi BM25 Ranking &bull; Prefix Trie Autocomplete</p>
+        </header>
+
+        <!-- Search Bar Section -->
+        <section class="search-section">
+            <div class="search-wrapper">
+                <div class="search-box">
+                    <svg class="search-icon" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                    <input 
+                        type="text" 
+                        id="search-input" 
+                        placeholder="Search articles e.g., consensus, 'redis streams', bloom filter..." 
+                        autocomplete="off"
+                        autofocus
+                    >
+                    <button id="clear-btn" class="clear-btn hidden">&times;</button>
+                </div>
+                <!-- Autocomplete Suggestions Dropdown -->
+                <div id="autocomplete-dropdown" class="autocomplete-dropdown hidden"></div>
+            </div>
+
+            <!-- "Did you mean?" Typo Correction Alert -->
+            <div id="typo-alert" class="typo-alert hidden">
+                Did you mean: <span id="typo-suggestion" class="typo-link"></span>?
+            </div>
+        </section>
+
+        <!-- Telemetry & Metrics Strip -->
+        <div id="metrics-strip" class="metrics-strip hidden">
+            <span id="results-count">0 results</span>
+            <span class="dot">&bull;</span>
+            <span>Query Execution Time: <strong id="exec-time">0.0 ms</strong></span>
+            <span class="dot">&bull;</span>
+            <span id="ranking-algo">Okapi BM25 ($k_1=1.5, b=0.75$)</span>
+        </div>
+
+        <!-- Results Container -->
+        <main id="results-container" class="results-container"></main>
+
+        <!-- Footer / Corpus Info -->
+        <footer class="footer">
+            <div class="corpus-stats" id="corpus-stats">
+                Loaded <strong>8</strong> technical documents &bull; Inverted Index operational
+            </div>
+        </footer>
+    </div>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>

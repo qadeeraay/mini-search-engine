@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "title": "Understanding Distributed Consensus and the Raft Algorithm",
+    "content": "Distributed consensus is the protocol by which multiple nodes in a distributed system agree on a shared state machine. The Raft consensus algorithm was designed as a more understandable alternative to Paxos. Raft decomposes consensus into leader election, log replication, and safety guarantees. Nodes can exist in one of three states: Follower, Candidate, or Leader. Heartbeats maintain leadership and trigger new elections if a leader fails.",
+    "category": "Distributed Systems",
+    "url": "https://raft.github.io/"
+  },
+  {
+    "id": 2,
+    "title": "Designing High-Throughput Event-Driven Architectures with Redis Streams",
+    "content": "Redis Streams provide an append-only log data structure ideal for decoupled messaging and event-driven microservices. Unlike standard Pub/Sub, Redis Streams persist messages and support Consumer Groups. Consumer groups enable multiple worker instances to divide workload using XREADGROUP and acknowledge processed messages via XACK, guaranteeing at-least-once message delivery semantics.",
+    "category": "System Architecture",
+    "url": "https://redis.io/docs/data-types/streams/"
+  },
+  {
+    "id": 3,
+    "title": "Information Retrieval: Deep Dive into Okapi BM25 Ranking",
+    "content": "Okapi BM25 is a non-linear term frequency saturation ranking function widely utilized in full-text search engines like Apache Lucene and Elasticsearch. Unlike naive TF-IDF where term frequency grows linearly, BM25 asymptotically caps the contribution of repeated terms using parameter k1. Furthermore, parameter b normalizes scores against document length to prevent long documents from unfairly dominating search results.",
+    "category": "Information Retrieval",
+    "url": "https://en.wikipedia.org/wiki/Okapi_BM25"
+  },
+  {
+    "id": 4,
+    "title": "Rate Limiting Strategies: Token Bucket vs Sliding Window Log",
+    "content": "API rate limiting prevents denial-of-service and noisy neighbor abuse. The Token Bucket algorithm buffers burst traffic while enforcing average rate limits, storing tokens in memory. The Sliding Window Log algorithm maintains timestamps in a Redis sorted set to guarantee zero over-limit leakage at rolling window boundaries. Executing these algorithms via Redis Lua scripts prevents race conditions in multi-threaded API gateways.",
+    "category": "API Gateway",
+    "url": "https://en.wikipedia.org/wiki/Token_bucket"
+  },
+  {
+    "id": 5,
+    "title": "Cache Invalidation and Mitigating Cache Penetration with Bloom Filters",
+    "content": "Caching with Redis Cache-Aside accelerates read performance but introduces challenges like cache stampedes and cache penetration. Cache penetration occurs when queries for non-existent keys repeatedly bypass the cache and hit the relational database. Implementing a space-efficient Bitset Bloom Filter before database queries allows the application to reject absent keys with mathematical certainty, protecting database connection pools.",
+    "category": "Caching & Databases",
+    "url": "https://en.wikipedia.org/wiki/Bloom_filter"
+  },
+  {
+    "id": 6,
+    "title": "Database Storage Engines: B-Trees vs Log-Structured Merge Trees (LSM)",
+    "content": "Relational databases like PostgreSQL utilize B-Tree indexes for fast random reads and range queries. Modern distributed NoSQL systems like Cassandra and RocksDB utilize Log-Structured Merge (LSM) trees to optimize write-heavy workloads. LSM trees buffer writes in memory via MemTables, commit to Write-Ahead Logs (WAL) for durability, and asynchronously flush sorted strings to SSTables on disk.",
+    "category": "Databases",
+    "url": "https://en.wikipedia.org/wiki/Log-structured_merge-tree"
+  },
+  {
+    "id": 7,
+    "title": "Kubernetes Operators and the Reconciliation Controller Pattern",
+    "content": "Kubernetes Operators extend the core Kubernetes API using Custom Resource Definitions (CRDs). An operator runs an active reconciliation control loop that continuously compares desired state specified in the CRD against actual cluster state. If differences are detected, the operator executes corrective automated workflows, enabling self-healing applications in production environments.",
+    "category": "DevOps & Cloud",
+    "url": "https://kubernetes.io/docs/concepts/extend-kubernetes/operator/"
+  },
+  {
+    "id": 8,
+    "title": "Microservices Communication: Synchronous REST vs Asynchronous gRPC",
+    "content": "Designing resilient microservices requires choosing between synchronous HTTP REST protocols and binary gRPC over HTTP/2. gRPC provides protocol buffer serialization, multiplexed bidirectional streaming, and strictly typed interface definitions. For decoupled asynchronous communication, event brokers like Apache Kafka or Redis Streams decouple producers from consumers.",
+    "category": "System Architecture",
+    "url": "https://grpc.io/"
+  }
+]
