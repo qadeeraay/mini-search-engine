@@ -23,6 +23,11 @@ trie = PrefixTrie()
 spellchecker = TypoCorrector()
 
 
+import logging
+
+logger = logging.getLogger("search_engine")
+
+
 def load_corpus():
     """Seeds the inverted index, trie, and spellchecker with the knowledge corpus."""
     if os.path.exists(settings.CORPUS_PATH):
@@ -49,7 +54,8 @@ def load_corpus():
                     vocab.add(clean_w)
 
         spellchecker.update_vocabulary(vocab)
-        print(f"[+] Loaded and indexed {len(articles)} documents into Inverted Index.")
+        logger.info("Loaded and indexed %d documents into Inverted Index.", len(articles))
+
 
 
 @asynccontextmanager
