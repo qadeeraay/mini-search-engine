@@ -1,7 +1,7 @@
 import math
 import re
 from dataclasses import dataclass
-from typing import List, Dict, Tuple, Optional
+from typing import List, Dict
 from engine.inverted_index import InvertedIndex
 
 

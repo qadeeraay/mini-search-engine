@@ -11,7 +11,7 @@ import os
 # Ensure project root is in sys.path
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from engine.preprocessor import PorterStemmer, TextPreprocessor
+from engine.preprocessor import PorterStemmer
 from engine.inverted_index import InvertedIndex
 from engine.ranker import BM25Ranker
 from engine.trie import PrefixTrie

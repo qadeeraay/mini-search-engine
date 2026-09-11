@@ -14,10 +14,10 @@ SAMPLE_TOPICS = [
 
 
 def run_benchmark():
-    print(f"============================================================")
-    print(f" Mini Search Engine - Performance & Scalability Benchmark")
+    print("============================================================")
+    print(" Mini Search Engine - Performance & Scalability Benchmark")
     print(f" Generating corpus of {CORPUS_SIZE} synthetic engineering docs")
-    print(f"============================================================")
+    print("============================================================")
 
     index = InvertedIndex()
     raw_docs = []

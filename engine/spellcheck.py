@@ -1,4 +1,4 @@
-from typing import Set, Optional, List, Tuple
+from typing import Set, Optional
 
 
 def damerau_levenshtein_distance(s1: str, s2: str) -> int:

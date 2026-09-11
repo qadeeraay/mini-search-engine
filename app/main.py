@@ -2,10 +2,10 @@ import os
 import json
 import time
 from contextlib import asynccontextmanager
-from typing import Optional, List, Dict
+from typing import Optional
 from fastapi import FastAPI, Query, HTTPException, status
 from fastapi.staticfiles import StaticFiles
-from fastapi.responses import FileResponse, JSONResponse
+from fastapi.responses import FileResponse
 from pydantic import BaseModel
 
 from app.config import settings

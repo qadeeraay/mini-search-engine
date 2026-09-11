@@ -1,6 +1,6 @@
 import json
 from dataclasses import dataclass, field
-from typing import Dict, List, Set, Optional, Tuple
+from typing import Dict, List, Set, Optional
 from engine.preprocessor import TextPreprocessor
 
 

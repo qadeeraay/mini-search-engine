@@ -1,5 +1,7 @@
 # Inverted Index & Okapi BM25 Mini Search Engine
 
+[![CI Pipeline](https://github.com/qadeeraay/mini-search-engine/actions/workflows/ci.yml/badge.svg)](https://github.com/qadeeraay/mini-search-engine/actions/workflows/ci.yml)
+[![CodeQL Security](https://github.com/qadeeraay/mini-search-engine/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/qadeeraay/mini-search-engine/actions/workflows/codeql-analysis.yml)
 [![Python 3.12](https://img.shields.io/badge/python-3.12-blue.svg)](https://www.python.org/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.110+-009688.svg)](https://fastapi.tiangolo.com/)
 [![Information Retrieval](https://img.shields.io/badge/Algorithms-BM25%20%7C%20Trie-purple.svg)](https://en.wikipedia.org/wiki/Okapi_BM25)
