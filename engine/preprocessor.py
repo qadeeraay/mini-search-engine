@@ -87,7 +87,7 @@ class PorterStemmer:
         if len(word) <= 2:
             return word
 
-        # Step 1a: plurals and -ed / -ing
+        # Plural and past-participle normalization (phase 1a)
         if word.endswith("sses"):
             word = word[:-2]
         elif word.endswith("ies"):
@@ -95,7 +95,7 @@ class PorterStemmer:
         elif not word.endswith("ss") and word.endswith("s"):
             word = word[:-1]
 
-        # Step 1b
+        # Suffix reduction for -eed, -ed, and -ing (phase 1b)
         extra = False
         if word.endswith("eed"):
             stem = word[:-3]
@@ -120,11 +120,11 @@ class PorterStemmer:
             elif self.get_measure(word) == 1 and self.cvc(word):
                 word += "e"
 
-        # Step 1c: y -> i
+        # Terminal y to i replacement (phase 1c)
         if word.endswith("y") and self.contains_vowel(word[:-1]):
             word = word[:-1] + "i"
 
-        # Step 2 & 3: common suffixes
+        # Derivational suffix mapping (phases 2 and 3)
         step2_map = {
             "ational": "ate", "tional": "tion", "enci": "ence", "anci": "ance",
             "izer": "ize", "bli": "ble", "alli": "al", "entli": "ent",
@@ -139,7 +139,7 @@ class PorterStemmer:
                     word = stem + replacement
                 break
 
-        # Step 4: suffix removal
+        # Residual suffix stripping (phase 4)
         step4_suffixes = ["al", "ance", "ence", "er", "ic", "able", "ible", "ant", "ement", "ment", "ent", "ou", "ism", "ate", "iti", "ous", "ive", "ize"]
         for suffix in step4_suffixes:
             if word.endswith(suffix):
@@ -148,7 +148,7 @@ class PorterStemmer:
                     word = stem
                 break
 
-        # Step 5: final cleanup
+        # Terminal e and double consonant normalization (phase 5)
         if word.endswith("e"):
             stem = word[:-1]
             m = self.get_measure(stem)
