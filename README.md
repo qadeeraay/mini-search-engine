@@ -9,7 +9,7 @@ A full-text search engine engineered from scratch in Python, implementing the co
 
 ---
 
-## System Design Highlights (Why This Stands Out on a Resume)
+## System Design & Algorithmic Highlights
 
 - **Positional Inverted Index:** Engineered a custom index tracking document IDs, term frequencies, and word offsets, enabling exact phrase queries (`"distributed systems"`) in $O(P)$ time without rescanning document text.
 - **Pure-Algorithmic Text Preprocessing:** Implemented the classic **Porter Stemming Algorithm (1980)** and a regex tokenization pipeline without third-party NLP library dependencies.
@@ -96,8 +96,10 @@ python scripts/benchmark_search.py
 
 ---
 
-## Resume Bullet Points for Candidates
+## Algorithmic Capabilities & Benchmark Specifications
 
-> - *"Engineered a full-text search engine from scratch in Python featuring a Positional Inverted Index and Okapi BM25 relevance ranking, achieving a 44x query speedup over linear scans on benchmark datasets."*
-> - *"Implemented an NLP preprocessing pipeline including a custom Porter Stemming algorithm and positional token sequencer supporting exact multi-term phrase queries."*
-> - *"Built a Prefix Trie autocomplete engine and Damerau-Levenshtein typo correction algorithm, delivering sub-millisecond search-as-you-type suggestions through a modern FastAPI web interface."*
+Key algorithmic capabilities and computational benchmarks:
+
+> - *"Full-text search engine engineered from scratch in Python featuring a Positional Inverted Index and Okapi BM25 relevance ranking, achieving a 44x query speedup over linear scans on benchmark datasets."*
+> - *"NLP preprocessing pipeline including a custom Porter Stemming algorithm and positional token sequencer supporting exact multi-term phrase queries in sub-millisecond execution times."*
+> - *"Prefix Trie autocomplete engine and Damerau-Levenshtein typo correction algorithm, delivering sub-millisecond search-as-you-type suggestions through a modern FastAPI web interface."*
